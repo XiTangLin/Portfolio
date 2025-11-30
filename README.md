@@ -15,5 +15,6 @@
 - Determined costs outweighed the benefits despite government subsidies.
 ## 2023 - TSX Forecasting (Personal Project | R)
 - Compared various models for predicting stock returns and developed a simple trading algorithm.
-## 2025 - Pandas Mini-Analysis (Personal Project | Python)
-- Simple analysis to review Python.
+## 2025 - Pandas Mini-Analysis (Personal Project | Python, Jupyter Notebooks)
+- Built a regression model.
+- Created a visualization of the data using matplotlib.
