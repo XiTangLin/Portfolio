@@ -1,5 +1,5 @@
 # Portfolio
-## --- 2025 ---
+## 2025: Python ML Projects, AWS S3, Jupyter Notebooks, and Databricks
 ### Red Wine Quality Data Pipeline (Personal Project | AWS S3, Databricks, and PySpark)
 - Set up a Data Pipeline using AWS S3 and Databricks.
 - Used PySpark MLlib to build, tune, and evaluate Linear Regression, Random Forest, and Gradient Boosted Trees Models.
@@ -8,7 +8,7 @@
 ### Pandas Mini-Analysis (Personal Project | Python, Jupyter Notebooks)
 - Built a regression model.
 - Created a visualization of the data using matplotlib.
-## --- 2023 ----
+## 2023: R Studio & ArcGIS
 ### TSX Forecasting (Personal Project | R)
 - Compared various models for predicting stock returns and developed a simple trading algorithm.
 ### Solar Panel Report (Personal Project | R)
@@ -17,7 +17,7 @@
 - Determined costs outweighed the benefits despite government subsidies.
 ### GIS Assignments (Coursework | ArcGIS)
 - A selection of geographic analysis: a suitability analysis and a routing analysis
-## --- 2021 ----
+## 2021: Coursework with R Studio
 ### Seoul Bikes Case Study (Coursework | R):
 - Collaborated with team members to analyze qualitative data using R Studio.
 - Built the main model and assisted with data exploration and model validation.
