@@ -18,3 +18,8 @@
 ## 2025 - Pandas Mini-Analysis (Personal Project | Python, Jupyter Notebooks)
 - Built a regression model.
 - Created a visualization of the data using matplotlib.
+## 2025 - Red Wine Quality Data Pipeline
+- Setup a Data Pipeline using AWS S3 and Databricks.
+- Used PySpark MLlib to build, tune, and evaluate Linear Regression, Random Forest, and Gradient Boosted Trees Models.
+- Interpreted the Results and Wrote a Project Summary
+- Used Databricks' Git Folders and Pushed Updates to Github.
