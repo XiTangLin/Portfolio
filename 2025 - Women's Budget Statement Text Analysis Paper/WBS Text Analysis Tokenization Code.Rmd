@@ -1,0 +1,114 @@
+---
+title: "EPPS 6302 Final Project"
+author: "Tan Lin"
+date: "2025-11-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Setting Up
+```{r}
+#Loading Libraries
+library(dplyr)
+library(readtext)
+library(quanteda)
+library(hunspell)
+library(ggplot2)
+
+# Load PDfs
+corpus <- readtext(file = "WBS PDFs//*") %>% as.data.frame(stringsAsFactors = FALSE) %>% corpus()
+```
+
+
+# Initial Text Processing
+```{r}
+# Extracting Raw Tokens and Doing Simple Cleaning
+raw_toks = tokens(corpus,
+                    remove_punct = TRUE,
+                    remove_symbols = TRUE,
+                    remove_numbers = TRUE,
+                    remove_url = TRUE)
+
+# Getting Unique Tokens
+toks = tokens_tolower(raw_toks) %>% # Converting Tokens to Lower Case
+tokens_remove(, pattern = stopwords("en")) # Removing Stopwords
+  
+unique_toks = unique(unlist(toks)) # Unlist and Finding Unique Tokens
+
+
+# Finding Misspelled Unique Tokens
+raw_misspells = hunspell_find(unique_toks) # Getting a list of mispellings
+
+# Selecting and Merging Mispellings
+misspells =  sapply(raw_misspells[lengths(raw_misspells) > 0], paste, collapse = "")
+
+# Generating Suggestions Using Hunspell (Australian English)
+suggests = hunspell_suggest(misspells, dict = "en_AU")
+
+# Accepting the First Suggestion
+first_suggests = unlist(lapply(suggests, function(x) x[1]))
+
+# Counting Tokens
+my_dfm = dfm(toks)
+
+tok_counts <- colSums(my_dfm) %>% data.frame(word = names(.), count = .)
+
+#Combining Data into a Dataframe 
+misspells_suggests = data.frame(misspells,first_suggests)
+colnames(misspells_suggests) = c("word","suggestion")
+
+
+spellcheck_df = left_join(misspells_suggests,tok_counts) %>%
+  distinct(word, .keep_all = TRUE) %>% #Keep Distinct
+  arrange(desc(count)) #Sort
+```
+# Manual Corrections
+```{r}
+# Filling in Acronyms
+acronyms = read.csv("ACRONYMS.csv") %>% as.data.frame()
+acronyms$word = sapply(acronyms$word,tolower)
+
+spellcheck_df2 = left_join(spellcheck_df,acronyms) %>%
+  mutate(suggestion = ifelse(!is.na(full_name),full_name, suggestion))
+
+spellcheck_df2[lengths(spellcheck_df2$suggestion) > 1,]
+# If it exists, use the manual corrections csv to update the spellcheck_df, otherwise create the csv
+if(!file.exists("spellcheck_update")){
+  #write.csv(spellcheck_df2[601:800,c("word","suggestion")],"spellcheck_update.csv")
+}
+spellcheck_update = read.csv("spellcheck_update.csv") %>% as.data.frame()
+
+# Apply the manual corrections to the df. Apply the manual corrections to the tokens list.
+colnames(spellcheck_update) = c("index","word","update")
+spellcheck_df3 = left_join(spellcheck_df2[,1:2],spellcheck_update) %>%
+  mutate(suggestion = ifelse(!is.na(update),update, suggestion))
+
+spellcheck = spellcheck_df3[,c("word","suggestion")] %>%
+  distinct(word, .keep_all = TRUE) %>%
+  mutate(suggestion = ifelse(is.na(suggestion), "", suggestion))
+
+spellchecked_toks = tokens_replace(toks,spellcheck$word,spellcheck$suggestion) %>% tokens_remove("") %>% tokens_wordstem()
+```
+
+# Tokens into CSV
+```{r}
+# Reconstruct text
+cleaned_text = sapply(spellchecked_toks, paste, collapse = " ")
+
+cleaned_df = data.frame(docnames(corpus),cleaned_text)
+
+write.csv(cleaned_df, "corpus_cleaned.csv")
+```
+
+# Some Fun Visualizations
+```{r}
+raw_counts = dfm(raw_toks) %>% rowSums()
+raw_counts_df = data.frame(document = names(raw_counts),words = raw_counts)
+row.names(raw_counts_df) = NULL
+raw_counts_df$document = substring(raw_counts_df$document,0,11)
+ggplot(raw_counts_df,aes(document,words)) + geom_bar(stat="identity",fill="lightblue") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none") + xlab("WBS Year") + ylab("Number of Words") + ggtitle("Word Count for WBS Documents")
+```
+
