@@ -10,9 +10,11 @@ _Personal Project | AWS S3, Databricks, & PySpark_
 _Personal Project | Python & Jupyter Notebooks_
 - Built a regression model.
 - Created a visualization of the data using matplotlib.
-### Textual Analysis on Australia's Women's Budget Statement
-_Group Coursework | Quanteda & Hunspell_
-- Led the tokenization and data processing section.
+### Women's Budget Text Analysis Paper
+_Group Coursework | R Studio, Quanteda, & Hunspell_
+- Wrote code for the tokenization and data processing section.
+- Coordinated the group to write a paper and complete a presentation.
+
 ## 2023: R Studio & ArcGIS
 ### TSX Forecasting
 _Personal Project | R Studio_
@@ -24,6 +26,7 @@ _Personal Project | R Studio_
 ### GIS Assignments
 _Coursework | ArcGIS & SQL_
 - A selection of geographic analysis: a suitability analysis and a routing analysis
+
 ## 2021: Coursework with R Studio
 ### Seoul Bikes Case Study
 _Group Coursework | R Studio_
