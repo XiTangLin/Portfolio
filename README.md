@@ -5,7 +5,7 @@ _Personal Project | AWS S3, Databricks, & PySpark_
 - Set up a Data Pipeline using AWS S3 and Databricks.
 - Used PySpark MLlib to build, tune, and evaluate Linear Regression, Random Forest, and Gradient Boosted Trees Models.
 - Interpreted the Results and Wrote a Project Summary
-- Used Databricks' Git Folders and Pushed Updates to Github.
+- Used Databricks' Git Folders and Pushed Updates to GitHub.
 ### Pandas Mini-Analysis
 _Personal Project | Python & Jupyter Notebooks_
 - Built a regression model.
@@ -15,7 +15,7 @@ _Group Coursework | R Studio, Quanteda, & Hunspell_
 - Wrote code for the tokenization and data processing section.
 - Coordinated the group to write a paper and complete a presentation.
 
-## 2023: R Studio & ArcGIS
+## 2023: R Programming and Geospatial Analysis
 ### TSX Forecasting
 _Personal Project | R Studio_
 - Compared various models for predicting stock returns and developed a simple trading algorithm.
@@ -27,7 +27,7 @@ _Personal Project | R Studio_
 _Coursework | ArcGIS & SQL_
 - A selection of geographic analysis: a suitability analysis and a routing analysis
 
-## 2021: Coursework with R Studio
+## 2021: Undergraduate Coursework using R Studio
 ### Seoul Bikes Case Study
 _Group Coursework | R Studio_
 - Collaborated with team members to analyze qualitative data using R Studio.
