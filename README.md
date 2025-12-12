@@ -16,12 +16,12 @@ _Group Coursework | R Studio, Quanteda, & Hunspell_
 - Coordinated the group to write a paper and complete a presentation.
 
 ## 2023: R Programming and Geospatial Analysis
-### TSX Forecasting and Trading Algorithm
+### TSX Forecasting
 _Personal Project | R Studio_
-- Compared various models for predicting stock returns and developed a simple trading algorithm.
-### Solar Panel Profitability Analysis
+- Compared various models for predicting stock returns and developed a simple **trading algorithm**.
+### Solar Panel Report
 _Personal Project | R_
-- Explored the various considerations for installing solar panels for main residences and rental properties after hearing about government incentives.
+- Explored the various considerations for installing solar panels for main residences and rental properties.
 - Forecasted solar panel energy production, energy prices, overall costs, etc., over the average panel lifespan (30 years).
 - Determined costs outweighed the benefits despite government subsidies.
 ### GIS Assignments
@@ -36,6 +36,6 @@ _Group Coursework | R Studio_
 - Accounted for seasonality and additional factors while modeling rental bike usage.
 ### Brown Fat Case Study
 _Group Coursework | R Studio_
-- Worked with team members to write and present a report.
+- Worked with team members to build a model to predict the presence of brown fat in patients.
 - Led the data exploration and model-building sections.
 - Used train-test splits, heatmaps, etc.
