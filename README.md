@@ -7,7 +7,7 @@ _Personal Project | AWS S3, Databricks, & PySpark_
 - Interpreted the Results and Wrote a Project Summary
 - Used Databricks' Git Folders and Pushed Updates to GitHub.
 ### Pandas Mini-Analysis
-_Personal Project | Python & Jupyter Notebooks_
+_Personal Project | Pandas, Mathplotlib, Numpy & Jupyter Notebooks_
 - Built a regression model.
 - Created a visualization of the data using matplotlib.
 ### Women's Budget Text Analysis Paper
